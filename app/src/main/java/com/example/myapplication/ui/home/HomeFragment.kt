@@ -71,12 +71,17 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
             val characters = call.body()
             if( call.isSuccessful ) {
                 val data = characters?.data?.results
+                println(data)
                 strs.clear()
-                data?.get(0)?.comics?.items?.forEach { it ->
-                    strs.add(it.name)
-                    ids.add(it.resourceURI)
+                if(data?.size!! > 0) {
+                    data?.get(0)?.comics?.items?.forEach { it ->
+                        strs.add(it.name)
+                        ids.add(it.resourceURI)
+                    }
+                    adapter.notifyDataSetChanged()
+                } else {
+                    showError()
                 }
-                adapter.notifyDataSetChanged()
             }else{
                 showError()
             }
