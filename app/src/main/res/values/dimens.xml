@@ -1,3 +1,8 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="zero">0dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="seventeen">17dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="hundred">100dp</dimen>
+    <dimen name="hundred_ten">110dp</dimen>
 </resources>

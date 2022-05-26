@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">DSH</string>
+    <string name="app_name">Marvelízate</string>
+    <string name="title_search">Búsqueda</string>
+    <string name="title_favs">Favoritos</string>
     <string name="title_notifications">Noti</string>
+
+    <string name="search_desc">Introduce el nombre de un personaje y encuentra sus cómics</string>
 
 </resources>

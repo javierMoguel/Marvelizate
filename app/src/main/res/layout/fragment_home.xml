@@ -3,29 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/twenty"
+        android:padding="@dimen/twenty"
+        android:textAlignment="center"
+        android:id="@+id/fhText"
+        >
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_desc"
+        app:layout_constraintTop_toBottomOf="@id/fhText"
+        android:textAlignment="center"
+        android:textSize="@dimen/seventeen"
+        android:paddingLeft="@dimen/seventeen"
+        android:paddingRight="@dimen/seventeen"
+        >
+    </TextView>
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/svChar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/hundred_ten"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChar"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@+id/svChar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero"
+        app:layout_constraintTop_toBottomOf="@id/svChar"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
