@@ -1,12 +1,16 @@
 package com.example.myapplication.ui.home
 
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -49,7 +53,6 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
         adapter = CharacterAdapter(strs, ids)
         _binding!!.rvChar.layoutManager = LinearLayoutManager(activity)
         _binding!!.rvChar.adapter = adapter
-
     }
 
     override fun onDestroyView() {
@@ -79,6 +82,9 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
                         ids.add(it.resourceURI)
                     }
                     adapter.notifyDataSetChanged()
+                    val inputMethodManager: InputMethodManager = activity?.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
                 } else {
                     showError()
                 }
